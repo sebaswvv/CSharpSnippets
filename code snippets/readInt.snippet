@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Random number code snippet</Title>
+            <Author>Luc Moetwil</Author>
+            <Description>creates a method to read an integer</Description>
+            <Shortcut>readInt</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[int ReadInt(string question)
+        {
+            Console.Write(question);
+            int value = int.Parse(Console.ReadLine());
+            return value;
+        }]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

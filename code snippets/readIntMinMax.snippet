@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Read int min max</Title>
+            <Author>Thomas Arensman</Author>
+            <Description>Keeps asking and reading ints while user input is not in the min max range</Description>
+            <Shortcut>readIntMinMax</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[int ReadInt(string question, int minimum, int maximum)
+        {
+            Console.Write(question);
+            int number = int.Parse(Console.ReadLine());
+            while (number < minimum || number > maximum)
+            {
+                Console.Write(question);
+                number = int.Parse(Console.ReadLine());
+            }
+            return number;
+        }]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

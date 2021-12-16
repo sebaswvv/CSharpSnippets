@@ -9,8 +9,14 @@
         </Header>
         <Snippet>
             <Code Language="CSharp">
-                <![CDATA[StreamReader reader = new StreamReader(filename);
-                reader.Close();]]>
+                <![CDATA[
+                
+                if (File.Exists(filename))
+                {
+                    StreamReader reader = new StreamReader(filename);
+                    reader.Close();
+                }
+                ]]>
             </Code>
         </Snippet>
     </CodeSnippet>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>PrintTextInColor</Title>
+            <Author>Lars Hartendorp</Author>
+            <Description>Print a text in any color you want. (don't forget to add a color.)</Description>
+            <Shortcut>textInColor</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[private static void PrintTextInColor(string text)
+        {
+            // or background.
+            Console.ForegroundColor = ConsoleColor.CHOOSECOLOR;
+            Console.WriteLine(text);
+            Console.ResetColor();
+        }]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

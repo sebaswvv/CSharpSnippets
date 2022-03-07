@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>GetByIdMethod</Title>
+            <Author>Luc Moetwil</Author>
+            <Description>GetByIdMethod</Description>
+            <Shortcut>getByIdMethod</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[ public Book GetById(int bookId)
+        {
+            dbConnection.Open();
+            SqlCommand command = new SqlCommand("SELECT * FROM Books WHERE [id] = {bookId}", dbConnection);
+            SqlDataReader reader = command.ExecuteReader();
+
+            Book book = null;
+            if (reader.Read())
+            {
+                book = ReadBook(reader);
+            }
+            reader.Close();
+            dbConnection.Close();
+
+            return book;
+        }]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>GetAllMethod</Title>
+            <Author>Luc Moetwil</Author>
+            <Description>GetAllMethod</Description>
+            <Shortcut>getAllMethod</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[public List<Book> GetAll()
+        {
+            dbConnection.Open();
+            SqlCommand command = new SqlCommand("SELECT * FROM Books", dbConnection);
+            SqlDataReader reader = command.ExecuteReader();
+
+            List<Book> books = new List<Book>();
+            while (reader.Read())
+            {
+                Book book = ReadBook(reader);
+                books.Add(book);
+            }
+            reader.Close();
+            dbConnection.Close();
+
+            return books;
+
+        }]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
